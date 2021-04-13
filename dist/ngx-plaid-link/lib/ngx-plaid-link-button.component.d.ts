@@ -1,0 +1,32 @@
+import { EventEmitter } from "@angular/core";
+import { PlaidOnEventArgs, PlaidOnExitArgs, PlaidOnSuccessArgs } from './interfaces';
+import { ICustomWindow } from './ngx-plaid-link.directive';
+export declare class NgxPlaidLinkButtonComponent {
+    clientName: string;
+    Event: EventEmitter<PlaidOnEventArgs>;
+    Success: EventEmitter<PlaidOnSuccessArgs>;
+    Click: EventEmitter<any>;
+    Load: EventEmitter<any>;
+    Exit: EventEmitter<PlaidOnExitArgs>;
+    private defaultProps;
+    publicKey?: string;
+    apiVersion?: string;
+    env?: string;
+    institution?: string;
+    product?: Array<string>;
+    selectAccount?: boolean;
+    token?: string;
+    webhook?: string;
+    countryCodes?: string[];
+    style?: any;
+    buttonText?: string;
+    className?: string;
+    constructor();
+    get nativeWindow(): ICustomWindow;
+    onScriptError(): void;
+    onDirectiveSuccess(event: PlaidOnSuccessArgs): void;
+    onDirectiveExit(event: PlaidOnExitArgs): void;
+    onDirectiveLoad(event: any): void;
+    onDirectiveEvent(event: PlaidOnEventArgs): void;
+    onDirectiveClick(event: any): void;
+}
